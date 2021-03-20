@@ -20,12 +20,33 @@ class Mypage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: Colors.amber[800],
+      backgroundColor: Colors.indigo,
         appBar: AppBar(
             title:Text('Junyoung'), //appbar에 text 넣기
             centerTitle: true, //appbar에서 title 수정하기
-            backgroundColor: Colors.amber[700], //appbar 색상 수정하기
-            elevation:20.0 //appbar가 떠있는 효과를 준다
+            backgroundColor: Colors.indigoAccent, //appbar 색상 수정하기
+            elevation:20.0, //appbar가 떠있는 효과를 준다
+            leading: IconButton( //눌러야되니까 IconButton으로!
+              icon:Icon(Icons.menu), //그 햄버거 모양
+              onPressed: (){ //클릭 이벤트 발생
+                print('menu button clicked');
+              },//void function임
+            ), // leading = 간단한 위젯 등을 앱바 왼쪽에 위치시킴 (다른 곳에도 쓰임)
+          actions:<Widget>[ //actions = 복수의 아이콘 등을 오른쪽에 배치할 때
+            IconButton( //눌러야되니까 IconButton으로!
+              icon:Icon(Icons.shopping_cart), //쇼핑 카트
+              onPressed: (){
+                print('shopping cart button clicked');
+              },//void function임
+            ),
+            IconButton( //눌러야되니까 IconButton으로!
+              icon:Icon(Icons.search), //돋보기
+              onPressed: (){
+                print('search button clicked');
+              },//void function임
+            ),
+
+          ]
         ),
 
         body:Padding(
@@ -39,7 +60,7 @@ class Mypage extends StatelessWidget{
                 child: CircleAvatar(
                   backgroundImage: AssetImage('resource/cat.gif'),
                   radius: 60.0,//크기 조정
-                  backgroundColor: Colors.white, //투
+                  backgroundColor: Colors.white, //투명한 이미지면 뒤에 설정 ㄱㄴ
                 ),
               ), //아주 멋진 위젯
               Divider( //구분선
@@ -93,6 +114,7 @@ class Mypage extends StatelessWidget{
                   ),
                   Text('Computer Education',
                   style:TextStyle(
+                    color:Colors.white,
                     fontSize: 16.0,
                     letterSpacing: 1.0,
                   ),)
@@ -106,6 +128,7 @@ class Mypage extends StatelessWidget{
                     ),
                     Text('College of Education',
                       style:TextStyle(
+                        color:Colors.white,
                         fontSize: 16.0,
                         letterSpacing: 1.0,
                       ),)
@@ -119,6 +142,7 @@ class Mypage extends StatelessWidget{
                     ),
                     Text('Sungkyungwan University',
                       style:TextStyle(
+                        color:Colors.white,
                         fontSize: 16.0,
                         letterSpacing: 1.0,
                       ),)
