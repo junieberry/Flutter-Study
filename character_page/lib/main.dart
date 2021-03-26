@@ -37,7 +37,7 @@ class Mypage extends StatelessWidget{
               icon:Icon(Icons.shopping_cart), //쇼핑 카트
               onPressed: (){
                 print('shopping cart button clicked');
-              },//void function임
+              },//void function임 
             ),
             IconButton( //눌러야되니까 IconButton으로!
               icon:Icon(Icons.search), //돋보기
